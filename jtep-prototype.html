@@ -1,0 +1,2077 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J-TEP — Jago Trusted Embedded Finance Platform</title>
+    <link rel="stylesheet" href="jtep.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="ic-back" viewBox="0 0 24 24">
+          <path d="M15 18l-6-6 6-6" />
+        </symbol>
+        <symbol id="ic-chevron-r" viewBox="0 0 24 24">
+          <path d="M9 18l6-6-6-6" />
+        </symbol>
+        <symbol id="ic-shield" viewBox="0 0 24 24">
+          <path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z" />
+          <path d="M9 12l2 2 4-4" />
+        </symbol>
+        <symbol id="ic-check" viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" />
+        </symbol>
+        <symbol id="ic-bell" viewBox="0 0 24 24">
+          <path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6" />
+          <path d="M10 21a2 2 0 0 0 4 0" />
+        </symbol>
+        <symbol id="ic-user" viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="3.6" />
+          <path d="M4.5 20c1.5-4 4.2-6 7.5-6s6 2 7.5 6" />
+        </symbol>
+        <symbol id="ic-lock" viewBox="0 0 24 24">
+          <rect x="5" y="11" width="14" height="9" rx="2" />
+          <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+        </symbol>
+        <symbol id="ic-info" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 11v5.5M12 7.6v.1" />
+        </symbol>
+        <symbol id="ic-alert" viewBox="0 0 24 24">
+          <path d="M12 3l10 18H2L12 3z" />
+          <path d="M12 10v4.5M12 17.3v.1" />
+        </symbol>
+        <symbol id="ic-gift" viewBox="0 0 24 24">
+          <rect x="4" y="9" width="16" height="11" rx="1.5" />
+          <path d="M4 9h16v3.5H4z" />
+          <path d="M12 9v11" />
+          <path
+            d="M12 9c-1-3-3.6-4.4-5-3-1.2 1.2.2 3.2 5 3zM12 9c1-3 3.6-4.4 5-3 1.2 1.2-.2 3.2-5 3z"
+          />
+        </symbol>
+        <symbol id="ic-home" viewBox="0 0 24 24">
+          <path d="M4 11l8-7 8 7" />
+          <path d="M6 10v9h12v-9" />
+        </symbol>
+        <symbol id="ic-wallet" viewBox="0 0 24 24">
+          <rect x="3.5" y="6.5" width="17" height="12" rx="2.5" />
+          <path d="M15.5 12.5h3" />
+          <path d="M3.5 9.5h17" />
+        </symbol>
+        <symbol id="ic-finger" viewBox="0 0 24 24">
+          <path d="M12 4a8 8 0 0 1 8 8v2" />
+          <path d="M4 14v-2a8 8 0 0 1 3-6.2" />
+          <path d="M8 20c-1-2-1.5-3.7-1.5-6a5.5 5.5 0 0 1 11 0v1" />
+          <path
+            d="M12 21c-1.6-2-2.3-4-2.3-7a2.3 2.3 0 1 1 4.6 0c0 1.3.2 2.4.7 3.4"
+          />
+        </symbol>
+        <symbol id="ic-sparkle" viewBox="0 0 24 24">
+          <path
+            d="M12 3l1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6L12 3z"
+          />
+        </symbol>
+        <symbol id="ic-logout" viewBox="0 0 24 24">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <path d="M16 17l5-5-5-5" />
+          <path d="M21 12H9" />
+        </symbol>
+        <symbol id="ic-doc" viewBox="0 0 24 24">
+          <path
+            d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"
+          />
+          <path d="M14 2v6h6" />
+        </symbol>
+        <symbol id="ic-link" viewBox="0 0 24 24">
+          <path d="M9 15l6-6" />
+          <path d="M11 6l1-1a4 4 0 0 1 5.7 5.7l-1.2 1.2" />
+          <path d="M13 18l-1 1A4 4 0 0 1 6.3 13.3l1.2-1.2" />
+        </symbol>
+        <symbol id="ic-history" viewBox="0 0 24 24">
+          <path d="M3 12a9 9 0 1 0 3-6.7" />
+          <path d="M3 4v5h5" />
+          <path d="M12 8v4.5l3 2" />
+        </symbol>
+        <symbol id="ic-help" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M9.5 9.3a2.5 2.5 0 1 1 3.7 2.2c-.9.5-1.2 1-1.2 2" />
+          <path d="M12 17v.1" />
+        </symbol>
+        <symbol id="ic-settings" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="3" />
+          <path
+            d="M19.4 13a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V19a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H4a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V10a1.7 1.7 0 0 0 1.6 1H20a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.6 1z"
+          />
+        </symbol>
+        <symbol id="ic-bolt" viewBox="0 0 24 24">
+          <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" />
+        </symbol>
+        <symbol id="ic-clock" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3.5 2" />
+        </symbol>
+        <symbol id="ic-x" viewBox="0 0 24 24">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </symbol>
+
+        <symbol id="ic-jago" viewBox="0 0 24 24">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"
+          />
+        </symbol>
+        <symbol id="ic-bill" viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16l4-2 4 2 4-2 4 2V4a2 2 0 0 0-2-2z" />
+        </symbol>
+        <symbol id="ic-transact" viewBox="0 0 24 24">
+          <path d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4" />
+        </symbol>
+        <symbol id="ic-promo" viewBox="0 0 24 24">
+          <path
+            d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82zM7 7h.01"
+          />
+        </symbol>
+        <symbol id="ic-jago-logo" viewBox="0 0 24 24">
+          <path
+            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-2-13.5v5c0 1.105.895 2 2 2s2-.895 2-2v-5h-4zm2-3.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5S12.828 5 12 5z"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="app-wrap">
+      <div class="app-header">
+        <span class="kicker"
+          ><svg class="ic" style="width: 13px; height: 13px">
+            <use href="#ic-shield" />
+          </svg>
+          Bank Jago × Embedded Finance</span
+        >
+        <h1>J-TEP — Jago Trusted Embedded Finance Platform</h1>
+        <p>
+          Prototipe interaktif 11 layar — dari Beranda Bank Jago -> Penawaran
+          Cicilan Partner -> hingga manajemen pinjaman.
+        </p>
+      </div>
+
+      <div class="toolbar" id="toolbar"></div>
+
+      <div class="stage">
+        <div class="phone">
+          <div class="phone-inner" id="phoneInner">
+            <div class="notch"></div>
+            <div class="statusbar" style="background: #fff">
+              <span>9:41</span>
+              <div class="icons">
+                <svg
+                  width="18"
+                  height="11"
+                  viewBox="0 0 18 11"
+                  fill="currentColor"
+                >
+                  <rect x="0" y="6" width="3" height="5" rx="0.6" />
+                  <rect x="4.5" y="4" width="3" height="7" rx="0.6" />
+                  <rect x="9" y="2" width="3" height="9" rx="0.6" />
+                  <rect x="13.5" y="0" width="3" height="11" rx="0.6" />
+                </svg>
+                <svg
+                  width="16"
+                  height="11"
+                  viewBox="0 0 16 11"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M8 2.5c2.3 0 4.4.9 6 2.4l-1.4 1.4A6.4 6.4 0 0 0 8 4.5c-1.7 0-3.3.6-4.6 1.8L2 4.9A8.4 8.4 0 0 1 8 2.5z"
+                  />
+                  <path
+                    d="M8 6.5c1.1 0 2.2.4 3 1.2l-1.4 1.4A2.2 2.2 0 0 0 8 8.5c-.6 0-1.2.2-1.6.6L5 7.7A4.2 4.2 0 0 1 8 6.5z"
+                  />
+                  <circle cx="8" cy="10" r="1" />
+                </svg>
+                <svg width="24" height="11" viewBox="0 0 24 11" fill="none">
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="21"
+                    height="10"
+                    rx="2.5"
+                    stroke="currentColor"
+                  />
+                  <rect
+                    x="2"
+                    y="2"
+                    width="18"
+                    height="7"
+                    rx="1.2"
+                    fill="currentColor"
+                  />
+                  <rect
+                    x="22.3"
+                    y="3.3"
+                    width="1.4"
+                    height="4.4"
+                    rx="0.7"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="screens" id="screens">
+              <section
+                class="screen bg-white has-nav active"
+                id="screen-beranda"
+              >
+                <div class="beranda-head">
+                  <div class="logo-jago">
+                    <svg><use href="#ic-jago-logo" /></svg> Jago
+                  </div>
+                  <div
+                    class="icon-tile"
+                    style="
+                      width: 36px;
+                      height: 36px;
+                      background: none;
+                      border: 1px solid var(--g200);
+                      border-radius: 50%;
+                      color: var(--g700);
+                      cursor: pointer;
+                    "
+                    onclick="go('notif')"
+                  >
+                    <svg class="ic" style="width: 18px; height: 18px">
+                      <use href="#ic-bell" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: var(--navy);
+                    margin: 10px 0 20px;
+                  "
+                >
+                  Selamat pagi, Andi 👋
+                </div>
+
+                <div class="jago-limit-card">
+                  <div
+                    class="jago-limit-row"
+                    style="margin-bottom: 20px; cursor: pointer"
+                    onclick="toast('Detail limit', 800)"
+                  >
+                    <div>
+                      <div
+                        style="
+                          font-size: 11px;
+                          color: var(--g500);
+                          margin-bottom: 4px;
+                          font-weight: 600;
+                        "
+                      >
+                        Limit Tersedia
+                      </div>
+                      <div
+                        style="
+                          font-size: 22px;
+                          font-weight: 800;
+                          color: var(--navy);
+                        "
+                      >
+                        Rp15.000.000
+                      </div>
+                    </div>
+                    <svg class="ic"><use href="#ic-chevron-r" /></svg>
+                  </div>
+
+                  <hr
+                    style="
+                      border: none;
+                      border-top: 1px solid #dfe3f4;
+                      margin: 0 0 16px 0;
+                    "
+                  />
+
+                  <div
+                    class="jago-limit-row"
+                    style="cursor: pointer"
+                    onclick="go('dashboard', { tab: true })"
+                  >
+                    <div>
+                      <div
+                        style="
+                          font-size: 11px;
+                          color: var(--g500);
+                          margin-bottom: 4px;
+                          font-weight: 600;
+                        "
+                      >
+                        Total Kredit Aktif
+                      </div>
+                      <div
+                        style="
+                          font-size: 14px;
+                          font-weight: 800;
+                          color: var(--navy);
+                        "
+                        id="berandaKredit"
+                      >
+                        Rp0
+                      </div>
+                    </div>
+                    <svg class="ic"><use href="#ic-chevron-r" /></svg>
+                  </div>
+                </div>
+
+                <div class="jago-action-grid">
+                  <div
+                    class="jago-action-item"
+                    onclick="go('dashboard', { tab: true })"
+                  >
+                    <div class="jago-icon-box" style="color: #4a6ee0">
+                      <svg class="ic" style="width: 22px; height: 22px">
+                        <use href="#ic-wallet" />
+                      </svg>
+                    </div>
+                    <span>Pinjaman<br />Saya</span>
+                  </div>
+                  <div
+                    class="jago-action-item"
+                    onclick="toast('Menu Tagihan (Demo)', 800)"
+                  >
+                    <div class="jago-icon-box" style="color: #0fa968">
+                      <svg class="ic" style="width: 22px; height: 22px">
+                        <use href="#ic-bill" />
+                      </svg>
+                    </div>
+                    <span>Tagihan</span>
+                  </div>
+                  <div
+                    class="jago-action-item"
+                    onclick="toast('Menu Transaksi (Demo)', 800)"
+                  >
+                    <div class="jago-icon-box" style="color: #3d4552">
+                      <svg class="ic" style="width: 22px; height: 22px">
+                        <use href="#ic-transact" />
+                      </svg>
+                    </div>
+                    <span>Transaksi</span>
+                  </div>
+                  <div
+                    class="jago-action-item"
+                    onclick="toast('Menu Promo (Demo)', 800)"
+                  >
+                    <div class="jago-icon-box" style="color: #e85d00">
+                      <svg class="ic" style="width: 22px; height: 22px">
+                        <use href="#ic-promo" />
+                      </svg>
+                    </div>
+                    <span>Promo</span>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: var(--navy);
+                    margin: 24px 0 12px;
+                  "
+                >
+                  Penawaran Untukmu
+                </div>
+
+                <div class="promo-banner">
+                  <div style="max-width: 60%; position: relative; z-index: 2">
+                    <div
+                      style="
+                        font-size: 13.5px;
+                        font-weight: 800;
+                        color: var(--navy);
+                        line-height: 1.4;
+                      "
+                    >
+                      Butuh dana untuk rencana Anda?
+                    </div>
+                    <div
+                      style="
+                        font-size: 10.5px;
+                        color: var(--g600);
+                        margin-top: 6px;
+                        line-height: 1.5;
+                      "
+                    >
+                      Dapatkan pinjaman cepat dengan bunga ringan
+                    </div>
+                    <button class="btn-sm" onclick="go('offer')">
+                      Ajukan Sekarang
+                    </button>
+                  </div>
+                  <div class="promo-illus"></div>
+                </div>
+              </section>
+
+              <section class="screen" id="screen-offer">
+                <div class="scr-head" style="background: var(--g50)">
+                  <div class="back-btn" onclick="back()">
+                    <svg class="ic"><use href="#ic-back" /></svg>
+                  </div>
+                  <div><div class="scr-title">J-TEP</div></div>
+                </div>
+
+                <div class="partner-strip" style="padding-top: 0">
+                  <span class="brand">J-<span>TEP</span></span>
+                  <svg class="ic" style="color: var(--g400)">
+                    <use href="#ic-user" />
+                  </svg>
+                </div>
+                <p class="desc" style="margin-top: -4px">
+                  Detail pembayaran perjalananmu
+                </p>
+                <div class="card">
+                  <div class="booking-card">
+                    <div class="booking-thumb">
+                      <svg class="ic" style="width: 24px; height: 24px">
+                        <use href="#ic-home" />
+                      </svg>
+                    </div>
+                    <div style="flex: 1">
+                      <div
+                        style="
+                          font-size: 13.5px;
+                          font-weight: 700;
+                          color: var(--navy);
+                        "
+                      >
+                        Hotel Harper Malioboro
+                      </div>
+                      <div
+                        style="
+                          font-size: 11.5px;
+                          color: var(--g500);
+                          margin-top: 2px;
+                        "
+                      >
+                        6–8 Jul 2026 · 2 malam
+                      </div>
+                      <div
+                        style="
+                          font-size: 15px;
+                          font-weight: 800;
+                          color: var(--navy);
+                          margin-top: 4px;
+                        "
+                      >
+                        Rp2.450.000
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ai-callout">
+                  <span class="sparkle"
+                    ><svg
+                      class="ic"
+                      style="width: 14px; height: 14px; color: #ffc98c"
+                    >
+                      <use href="#ic-sparkle" />
+                    </svg>
+                    Rekomendasi khusus untukmu</span
+                  >
+                  <div style="font-size: 13px; color: #c9d3e6; margin-top: 8px">
+                    Bayar nanti dengan J-TEP
+                  </div>
+                  <div class="limit">Rp12.000.000</div>
+                  <div style="font-size: 11.5px; color: #9fb0ce">
+                    Estimasi limit cicilan yang tersedia
+                  </div>
+                  <div class="trust-row">
+                    <div
+                      class="trust-chip"
+                      style="background: rgba(255, 255, 255, 0.08)"
+                    >
+                      <svg
+                        class="ic"
+                        style="width: 16px; height: 16px; color: #3ddc97"
+                      >
+                        <use href="#ic-check" /></svg
+                      ><span style="color: #d7deec">Persetujuan cepat</span>
+                    </div>
+                    <div
+                      class="trust-chip"
+                      style="background: rgba(255, 255, 255, 0.08)"
+                    >
+                      <svg
+                        class="ic"
+                        style="width: 16px; height: 16px; color: #3ddc97"
+                      >
+                        <use href="#ic-shield" /></svg
+                      ><span style="color: #d7deec">Data terlindungi</span>
+                    </div>
+                    <div
+                      class="trust-chip"
+                      style="background: rgba(255, 255, 255, 0.08)"
+                    >
+                      <svg
+                        class="ic"
+                        style="width: 16px; height: 16px; color: #3ddc97"
+                      >
+                        <use href="#ic-bolt" /></svg
+                      ><span style="color: #d7deec">Bunga kompetitif</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="card"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 12px 14px;
+                  "
+                >
+                  <svg
+                    class="ic"
+                    style="color: var(--emerald); width: 18px; height: 18px"
+                  >
+                    <use href="#ic-shield" />
+                  </svg>
+                  <span
+                    style="
+                      font-size: 11.5px;
+                      color: var(--g500);
+                      line-height: 1.5;
+                    "
+                    >Bank Jago terdaftar dan diawasi oleh
+                    <b style="color: var(--navy)">OJK</b>, simpanan dijamin
+                    <b style="color: var(--navy)">LPS</b>.</span
+                  >
+                </div>
+
+                <div class="sticky-cta">
+                  <button class="btn btn-primary" onclick="go('simulate')">
+                    Simulasikan Cicilan
+                    <svg class="ic" style="width: 17px; height: 17px">
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </button>
+                </div>
+              </section>
+
+              <section class="screen" id="screen-simulate">
+                <div class="scr-head">
+                  <div class="back-btn" onclick="back()">
+                    <svg class="ic"><use href="#ic-back" /></svg>
+                  </div>
+                  <div>
+                    <div class="scr-title">Simulasi Cicilan</div>
+                    <div class="scr-sub">
+                      Atur nominal dan tenor sesuai kebutuhanmu
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-flat" style="margin-bottom: 14px">
+                  <div class="label">Limit tersedia</div>
+                  <div
+                    style="
+                      font-size: 18px;
+                      font-weight: 800;
+                      color: var(--navy);
+                      margin-top: 2px;
+                    "
+                  >
+                    Rp12.000.000
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="label">Jumlah pinjaman</div>
+                  <div class="amt-display" id="simAmt">Rp8.000.000</div>
+                  <input
+                    type="range"
+                    id="simRange"
+                    min="1000000"
+                    max="12000000"
+                    step="500000"
+                    value="8000000"
+                    oninput="updateSim()"
+                  />
+                  <div class="range-labels">
+                    <span>Rp1jt</span><span>Rp12jt</span>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="label" style="margin-bottom: 8px">
+                    Tenor pinjaman
+                  </div>
+                  <div class="tenor-grid" id="tenorGrid">
+                    <div class="tenor-btn" data-t="3" onclick="setTenor(3)">
+                      3
+                    </div>
+                    <div class="tenor-btn" data-t="6" onclick="setTenor(6)">
+                      6
+                    </div>
+                    <div
+                      class="tenor-btn active"
+                      data-t="12"
+                      onclick="setTenor(12)"
+                    >
+                      12
+                    </div>
+                    <div class="tenor-btn" data-t="24" onclick="setTenor(24)">
+                      24
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      text-align: center;
+                      font-size: 11px;
+                      color: var(--g400);
+                      margin-top: 6px;
+                    "
+                  >
+                    bulan
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="label" style="margin-bottom: 10px">
+                    Perkiraan cicilan
+                  </div>
+                  <div class="row">
+                    <span style="font-size: 13px; color: var(--g600)"
+                      >Cicilan per bulan</span
+                    ><span
+                      style="
+                        font-size: 17px;
+                        font-weight: 800;
+                        color: var(--orange-dark);
+                      "
+                      id="simMonthly"
+                      >Rp749.000</span
+                    >
+                  </div>
+                  <hr class="hr" />
+                  <div class="row" style="margin-bottom: 8px">
+                    <span class="label">Bunga (1,5%/bulan)</span
+                    ><span class="value" id="simInterest">Rp1.180.000</span>
+                  </div>
+                  <div class="row" style="margin-bottom: 8px">
+                    <span class="label">Biaya admin</span
+                    ><span class="value" id="simAdmin">Rp150.000</span>
+                  </div>
+                  <hr class="hr" />
+                  <div class="row">
+                    <span
+                      class="label"
+                      style="font-weight: 700; color: var(--navy)"
+                      >Total pembayaran</span
+                    ><span
+                      style="
+                        font-size: 14.5px;
+                        font-weight: 800;
+                        color: var(--navy);
+                      "
+                      id="simTotal"
+                      >Rp9.330.000</span
+                    >
+                  </div>
+                </div>
+                <p
+                  style="
+                    font-size: 10.5px;
+                    color: var(--g400);
+                    text-align: center;
+                    margin-top: -6px;
+                  "
+                >
+                  *Simulasi hanya estimasi, angka final mengikuti hasil analisis
+                  kredit.
+                </p>
+
+                <div class="sticky-cta">
+                  <button class="btn btn-primary" onclick="go('consent')">
+                    Lanjutkan
+                    <svg class="ic" style="width: 17px; height: 17px">
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </button>
+                </div>
+              </section>
+
+              <section class="screen" id="screen-consent">
+                <div class="scr-head">
+                  <div class="back-btn" onclick="back()">
+                    <svg class="ic"><use href="#ic-back" /></svg>
+                  </div>
+                  <div>
+                    <div class="scr-title">Persetujuan Data</div>
+                    <div class="scr-sub">
+                      Sesuai prinsip AI yang bertanggung jawab
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="card"
+                  style="text-align: center; padding: 22px 16px"
+                >
+                  <div
+                    class="icon-tile"
+                    style="
+                      width: 52px;
+                      height: 52px;
+                      background: var(--navy-soft);
+                      color: var(--navy);
+                      margin: 0 auto 10px;
+                    "
+                  >
+                    <svg class="ic" style="width: 26px; height: 26px">
+                      <use href="#ic-shield" />
+                    </svg>
+                  </div>
+                  <p class="desc" style="margin: 0">
+                    Kami perlu akses data berikut untuk memastikan penilaian
+                    kredit yang akurat dan adil.
+                  </p>
+                </div>
+
+                <div class="card" id="consentList">
+                  <div class="consent-item" onclick="toggleConsentDetail(this)">
+                    <div
+                      class="icon-tile"
+                      style="
+                        background: var(--orange-light);
+                        color: var(--orange-dark);
+                        width: 34px;
+                        height: 34px;
+                      "
+                    >
+                      <svg class="ic" style="width: 18px; height: 18px">
+                        <use href="#ic-user" />
+                      </svg>
+                    </div>
+                    <div style="flex: 1">
+                      <div
+                        style="
+                          font-size: 13.5px;
+                          font-weight: 700;
+                          color: var(--navy);
+                        "
+                      >
+                        Informasi Pribadi
+                      </div>
+                      <div style="font-size: 11px; color: var(--g500)">
+                        Data dasar diri kamu
+                      </div>
+                      <div class="consent-detail">
+                        Nama, NIK, tanggal lahir, dan alamat sesuai KTP untuk
+                        verifikasi identitas.
+                      </div>
+                    </div>
+                    <svg class="ic chev" style="width: 16px; height: 16px">
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </div>
+                  <div class="consent-item" onclick="toggleConsentDetail(this)">
+                    <div
+                      class="icon-tile"
+                      style="
+                        background: var(--navy-soft);
+                        color: var(--navy);
+                        width: 34px;
+                        height: 34px;
+                      "
+                    >
+                      <svg class="ic" style="width: 18px; height: 18px">
+                        <use href="#ic-history" />
+                      </svg>
+                    </div>
+                    <div style="flex: 1">
+                      <div
+                        style="
+                          font-size: 13.5px;
+                          font-weight: 700;
+                          color: var(--navy);
+                        "
+                      >
+                        Histori Transaksi
+                      </div>
+                      <div style="font-size: 11px; color: var(--g500)">
+                        Transaksi di partner terkait
+                      </div>
+                      <div class="consent-detail">
+                        Riwayat pemesanan dan pembayaran di aplikasi partner
+                        selama 12 bulan terakhir.
+                      </div>
+                    </div>
+                    <svg class="ic chev" style="width: 16px; height: 16px">
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </div>
+                  <div class="consent-item" onclick="toggleConsentDetail(this)">
+                    <div
+                      class="icon-tile"
+                      style="
+                        background: var(--emerald-light);
+                        color: #0a7b4d;
+                        width: 34px;
+                        height: 34px;
+                      "
+                    >
+                      <svg class="ic" style="width: 18px; height: 18px">
+                        <use href="#ic-wallet" />
+                      </svg>
+                    </div>
+                    <div style="flex: 1">
+                      <div
+                        style="
+                          font-size: 13.5px;
+                          font-weight: 700;
+                          color: var(--navy);
+                        "
+                      >
+                        Aktivitas Pembayaran
+                      </div>
+                      <div style="font-size: 11px; color: var(--g500)">
+                        Riwayat pembayaran dan tagihan
+                      </div>
+                      <div class="consent-detail">
+                        Ketepatan waktu pembayaran cicilan atau tagihan yang
+                        pernah kamu miliki.
+                      </div>
+                    </div>
+                    <svg class="ic chev" style="width: 16px; height: 16px">
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="card" style="padding: 12px 14px">
+                  <span
+                    style="
+                      font-size: 11.5px;
+                      color: var(--g500);
+                      line-height: 1.6;
+                    "
+                    >Data kamu aman, terenkripsi, dan hanya digunakan untuk
+                    evaluasi kredit ini.
+                    <a
+                      href="#"
+                      onclick="return false;"
+                      style="
+                        color: var(--orange-dark);
+                        font-weight: 700;
+                        text-decoration: none;
+                      "
+                      >Pelajari Kebijakan Privasi</a
+                    ></span
+                  >
+                </div>
+
+                <div
+                  class="card"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 14px;
+                  "
+                >
+                  <span
+                    style="
+                      font-size: 12.5px;
+                      font-weight: 600;
+                      color: var(--navy);
+                      max-width: 230px;
+                    "
+                    >Saya menyetujui penggunaan data di atas untuk evaluasi
+                    kredit</span
+                  >
+                  <div
+                    class="toggle"
+                    id="masterToggle"
+                    onclick="toggleMaster(this)"
+                  ></div>
+                </div>
+
+                <div class="sticky-cta">
+                  <button
+                    class="btn btn-primary"
+                    id="consentBtn"
+                    disabled
+                    onclick="go('assess')"
+                  >
+                    Setuju & Lanjutkan
+                  </button>
+                </div>
+              </section>
+
+              <section class="screen" id="screen-assess">
+                <div class="scr-head">
+                  <div class="back-btn" onclick="back()">
+                    <svg class="ic"><use href="#ic-back" /></svg>
+                  </div>
+                  <div>
+                    <div class="scr-title">Analisis Kredit</div>
+                    <div class="scr-sub">Mohon tunggu, proses ini otomatis</div>
+                  </div>
+                </div>
+
+                <div class="ring-wrap">
+                  <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle
+                      cx="75"
+                      cy="75"
+                      r="62"
+                      fill="none"
+                      stroke="#EEF0F3"
+                      stroke-width="12"
+                    />
+                    <circle
+                      id="ringFg"
+                      cx="75"
+                      cy="75"
+                      r="62"
+                      fill="none"
+                      stroke="var(--orange)"
+                      stroke-width="12"
+                      stroke-linecap="round"
+                      stroke-dasharray="389.6"
+                      stroke-dashoffset="389.6"
+                      transform="rotate(-90 75 75)"
+                    />
+                    <text
+                      x="75"
+                      y="72"
+                      text-anchor="middle"
+                      class="ring-pct"
+                      id="ringPct"
+                    >
+                      0%
+                    </text>
+                    <text x="75" y="92" text-anchor="middle" class="ring-label">
+                      Menganalisis
+                    </text>
+                  </svg>
+                </div>
+
+                <div class="card" id="assessList">
+                  <div class="assess-item" data-i="0">
+                    <div class="assess-dot">
+                      <svg class="ic" style="width: 14px; height: 14px">
+                        <use href="#ic-check" />
+                      </svg>
+                    </div>
+                    <div style="flex: 1">
+                      <div class="assess-name">Verifikasi Identitas</div>
+                    </div>
+                    <div class="assess-status">Menunggu</div>
+                  </div>
+                  <div class="assess-item" data-i="1">
+                    <div class="assess-dot">
+                      <svg class="ic" style="width: 14px; height: 14px">
+                        <use href="#ic-shield" />
+                      </svg>
+                    </div>
+                    <div style="flex: 1">
+                      <div class="assess-name">Data Partner</div>
+                    </div>
+                    <div class="assess-status">Menunggu</div>
+                  </div>
+                  <div class="assess-item" data-i="2">
+                    <div class="assess-dot">
+                      <svg class="ic" style="width: 14px; height: 14px">
+                        <use href="#ic-history" />
+                      </svg>
+                    </div>
+                    <div style="flex: 1">
+                      <div class="assess-name">Histori Transaksi</div>
+                    </div>
+                    <div class="assess-status">Menunggu</div>
+                  </div>
+                  <div class="assess-item" data-i="3">
+                    <div class="assess-dot">
+                      <svg class="ic" style="width: 14px; height: 14px">
+                        <use href="#ic-sparkle" />
+                      </svg>
+                    </div>
+                    <div style="flex: 1">
+                      <div class="assess-name">Skoring Kredit AI</div>
+                    </div>
+                    <div class="assess-status">Menunggu</div>
+                  </div>
+                </div>
+
+                <div class="sticky-cta">
+                  <button
+                    class="btn btn-primary"
+                    id="assessBtn"
+                    disabled
+                    onclick="go('decision')"
+                    style="opacity: 0.5"
+                  >
+                    Menganalisis…
+                  </button>
+                </div>
+              </section>
+
+              <section class="screen" id="screen-decision">
+                <div class="scr-head">
+                  <div class="back-btn" onclick="back()">
+                    <svg class="ic"><use href="#ic-back" /></svg>
+                  </div>
+                  <div><div class="scr-title">Hasil Analisis Kredit</div></div>
+                </div>
+
+                <div class="success-burst">
+                  <svg class="ic" style="width: 32px; height: 32px">
+                    <use href="#ic-check" />
+                  </svg>
+                </div>
+                <h2 class="title" style="text-align: center">Selamat, Andi!</h2>
+                <p class="desc" style="text-align: center">
+                  Kamu memenuhi syarat untuk mendapatkan pinjaman J-TEP
+                </p>
+
+                <div
+                  class="card"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      var(--navy),
+                      var(--navy-2)
+                    );
+                  "
+                >
+                  <div style="font-size: 11.5px; color: #9fb0ce">
+                    Limit disetujui
+                  </div>
+                  <div
+                    style="
+                      font-size: 26px;
+                      font-weight: 800;
+                      color: #fff;
+                      margin: 3px 0 12px;
+                    "
+                    id="decLimit"
+                  >
+                    Rp10.500.000
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 10px;
+                    "
+                  >
+                    <div>
+                      <div style="font-size: 10.5px; color: #9fb0ce">
+                        Suku bunga
+                      </div>
+                      <div
+                        style="font-size: 13px; font-weight: 700; color: #fff"
+                      >
+                        5,5%/tahun
+                      </div>
+                    </div>
+                    <div>
+                      <div style="font-size: 10.5px; color: #9fb0ce">Tenor</div>
+                      <div
+                        style="font-size: 13px; font-weight: 700; color: #fff"
+                        id="decTenor"
+                      >
+                        12 Bulan
+                      </div>
+                    </div>
+                    <div>
+                      <div style="font-size: 10.5px; color: #9fb0ce">
+                        Cicilan/bulan
+                      </div>
+                      <div
+                        style="font-size: 13px; font-weight: 700; color: #fff"
+                        id="decMonthly"
+                      >
+                        Rp749.000
+                      </div>
+                    </div>
+                    <div>
+                      <div style="font-size: 10.5px; color: #9fb0ce">
+                        Keyakinan
+                      </div>
+                      <div
+                        style="
+                          font-size: 13px;
+                          font-weight: 700;
+                          color: #3ddc97;
+                        "
+                      >
+                        Sangat Tinggi
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="row" style="margin-bottom: 6px">
+                    <span class="label">Tingkat keyakinan model</span
+                    ><span
+                      class="value"
+                      style="color: var(--emerald)"
+                      id="confPctLabel"
+                      >92%</span
+                    >
+                  </div>
+                  <div class="conf-bar">
+                    <div class="conf-fill" id="confFill"></div>
+                  </div>
+                </div>
+
+                <div class="insight-box" style="margin-bottom: 14px">
+                  <svg class="ic" style="width: 20px; height: 20px">
+                    <use href="#ic-sparkle" />
+                  </svg>
+                  <p>
+                    Limit diberikan berdasarkan histori transaksi yang stabil
+                    dan kemampuan bayar yang konsisten selama 12 bulan terakhir.
+                  </p>
+                </div>
+
+                <div
+                  class="sticky-cta"
+                  style="display: flex; flex-direction: column; gap: 8px"
+                >
+                  <button class="btn btn-primary" onclick="go('agreement')">
+                    Ambil Penawaran
+                  </button>
+                  <button
+                    class="btn-text"
+                    onclick="back()"
+                    style="margin: 0 auto"
+                  >
+                    Pikirkan lagi nanti
+                  </button>
+                </div>
+              </section>
+
+              <section class="screen" id="screen-agreement">
+                <div class="scr-head">
+                  <div class="back-btn" onclick="back()">
+                    <svg class="ic"><use href="#ic-back" /></svg>
+                  </div>
+                  <div><div class="scr-title">Perjanjian Pinjaman</div></div>
+                </div>
+
+                <div class="stepper">
+                  <div class="step-dot on">1</div>
+                  <div
+                    class="step-line"
+                    style="background: var(--orange)"
+                  ></div>
+                  <div class="step-dot on">2</div>
+                  <div class="step-line"></div>
+                  <div class="step-dot" id="stepDot3">3</div>
+                </div>
+
+                <div class="card">
+                  <div
+                    class="label"
+                    style="
+                      margin-bottom: 8px;
+                      font-weight: 700;
+                      color: var(--navy);
+                      font-size: 13px;
+                    "
+                  >
+                    Ringkasan pinjaman
+                  </div>
+                  <div class="row" style="margin-bottom: 8px">
+                    <span class="label">Jumlah pinjaman</span
+                    ><span class="value" id="agAmt">Rp8.000.000</span>
+                  </div>
+                  <div class="row" style="margin-bottom: 8px">
+                    <span class="label">Tenor</span
+                    ><span class="value" id="agTenor">12 Bulan</span>
+                  </div>
+                  <div class="row" style="margin-bottom: 8px">
+                    <span class="label">Bunga</span
+                    ><span class="value">5,5%/tahun</span>
+                  </div>
+                  <div class="row">
+                    <span class="label">Cicilan per bulan</span
+                    ><span class="value" id="agMonthly">Rp749.000</span>
+                  </div>
+                  <hr class="hr" />
+                  <div
+                    class="row"
+                    style="cursor: pointer"
+                    onclick="toast('Membuka dokumen perjanjian…', 900)"
+                  >
+                    <span
+                      style="
+                        font-size: 12.5px;
+                        font-weight: 700;
+                        color: var(--orange-dark);
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                      "
+                      ><svg class="ic" style="width: 15px; height: 15px">
+                        <use href="#ic-doc" />
+                      </svg>
+                      Lihat dokumen perjanjian</span
+                    >
+                    <svg
+                      class="ic"
+                      style="width: 15px; height: 15px; color: var(--g400)"
+                    >
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div
+                    class="label"
+                    style="
+                      margin-bottom: 8px;
+                      font-weight: 700;
+                      color: var(--navy);
+                      font-size: 13px;
+                    "
+                  >
+                    Tanda tangan digital
+                  </div>
+                  <p
+                    style="font-size: 11px; color: var(--g500); margin: 0 0 8px"
+                  >
+                    Silakan tanda tangan di bawah ini
+                  </p>
+                  <canvas id="sigPad" class="sig-pad"></canvas>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: flex-end;
+                      margin-top: 6px;
+                    "
+                  >
+                    <span
+                      class="btn-text"
+                      style="padding: 4px 6px; cursor: pointer"
+                      onclick="clearSig()"
+                      >Hapus</span
+                    >
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div
+                    class="label"
+                    style="
+                      margin-bottom: 8px;
+                      font-weight: 700;
+                      color: var(--navy);
+                      font-size: 13px;
+                    "
+                  >
+                    Verifikasi OTP
+                  </div>
+                  <p
+                    style="font-size: 11px; color: var(--g500); margin: 0 0 4px"
+                  >
+                    Masukkan kode OTP yang dikirim ke 08xx-xxx-xx23
+                  </p>
+                  <div class="otp-row">
+                    <input
+                      class="otp-box"
+                      maxlength="1"
+                      inputmode="numeric"
+                      oninput="otpNext(this)"
+                      onkeydown="otpPrev(this, event)"
+                    />
+                    <input
+                      class="otp-box"
+                      maxlength="1"
+                      inputmode="numeric"
+                      oninput="otpNext(this)"
+                      onkeydown="otpPrev(this, event)"
+                    />
+                    <input
+                      class="otp-box"
+                      maxlength="1"
+                      inputmode="numeric"
+                      oninput="otpNext(this)"
+                      onkeydown="otpPrev(this, event)"
+                    />
+                    <input
+                      class="otp-box"
+                      maxlength="1"
+                      inputmode="numeric"
+                      oninput="otpNext(this)"
+                      onkeydown="otpPrev(this, event)"
+                    />
+                    <input
+                      class="otp-box"
+                      maxlength="1"
+                      inputmode="numeric"
+                      oninput="otpNext(this)"
+                      onkeydown="otpPrev(this, event)"
+                    />
+                    <input
+                      class="otp-box"
+                      maxlength="1"
+                      inputmode="numeric"
+                      oninput="otpNext(this)"
+                      onkeydown="otpPrev(this, event)"
+                    />
+                  </div>
+                  <span
+                    class="btn-text"
+                    style="
+                      padding: 4px 0;
+                      cursor: pointer;
+                      display: inline-block;
+                    "
+                    id="resendOtp"
+                    onclick="resendOtp()"
+                    >Kirim ulang OTP (00:45)</span
+                  >
+                  <div class="err-msg" id="agError" style="display: none">
+                    <svg class="ic" style="width: 14px; height: 14px">
+                      <use href="#ic-alert" />
+                    </svg>
+                    Lengkapi tanda tangan dan OTP!
+                  </div>
+                </div>
+
+                <div class="sticky-cta">
+                  <button class="btn btn-primary" onclick="submitAgreement()">
+                    Selesai
+                  </button>
+                </div>
+              </section>
+
+              <section class="screen" id="screen-success">
+                <canvas id="confetti-canvas"></canvas>
+                <div class="check-hero">
+                  <svg
+                    class="ic"
+                    style="width: 40px; height: 40px; stroke-width: 2.4"
+                  >
+                    <use href="#ic-check" />
+                  </svg>
+                </div>
+                <h2 class="title" style="text-align: center">
+                  Pinjaman Disetujui!
+                </h2>
+                <p class="desc" style="text-align: center">
+                  Dana pinjaman akan segera dicairkan ke rekening Bank Jago
+                  kamu.
+                </p>
+
+                <div class="card">
+                  <div
+                    class="label"
+                    style="
+                      margin-bottom: 8px;
+                      font-weight: 700;
+                      color: var(--navy);
+                      font-size: 13px;
+                    "
+                  >
+                    Ringkasan pinjaman
+                  </div>
+                  <div class="row" style="margin-bottom: 8px">
+                    <span class="label">Jumlah pinjaman</span
+                    ><span class="value" id="scAmt">Rp8.000.000</span>
+                  </div>
+                  <div class="row" style="margin-bottom: 8px">
+                    <span class="label">Tenor</span
+                    ><span class="value" id="scTenor">12 Bulan</span>
+                  </div>
+                  <div class="row">
+                    <span class="label">Cicilan per bulan</span
+                    ><span class="value" id="scMonthly">Rp749.000</span>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="label" style="margin-bottom: 4px">
+                    Estimasi pencairan
+                  </div>
+                  <div
+                    style="
+                      font-size: 14px;
+                      font-weight: 700;
+                      color: var(--navy);
+                      margin-bottom: 12px;
+                    "
+                  >
+                    Hari ini · Sekarang
+                  </div>
+                  <div class="timeline">
+                    <div class="tl-item done">
+                      <div
+                        style="
+                          font-size: 12.5px;
+                          font-weight: 700;
+                          color: var(--navy);
+                        "
+                      >
+                        Disetujui
+                      </div>
+                      <div style="font-size: 10.5px; color: var(--g400)">
+                        Selesai
+                      </div>
+                    </div>
+                    <div class="tl-item done">
+                      <div
+                        style="
+                          font-size: 12.5px;
+                          font-weight: 700;
+                          color: var(--navy);
+                        "
+                      >
+                        Diproses
+                      </div>
+                      <div style="font-size: 10.5px; color: var(--g400)">
+                        Selesai
+                      </div>
+                    </div>
+                    <div class="tl-item done">
+                      <div
+                        style="
+                          font-size: 12.5px;
+                          font-weight: 700;
+                          color: var(--navy);
+                        "
+                      >
+                        Dana dikirim
+                      </div>
+                      <div style="font-size: 10.5px; color: var(--g400)">
+                        Telah masuk ke kantong utama
+                      </div>
+                    </div>
+                    <div class="tl-item done">
+                      <div
+                        style="
+                          font-size: 12.5px;
+                          font-weight: 700;
+                          color: var(--navy);
+                        "
+                      >
+                        Selesai
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sticky-cta">
+                  <button class="btn btn-primary" onclick="finishOnboarding()">
+                    Lihat Pinjaman Saya
+                  </button>
+                </div>
+              </section>
+
+              <section class="screen has-nav bg-white" id="screen-dashboard">
+                <div
+                  class="scr-head"
+                  style="justify-content: space-between; position: static"
+                >
+                  <div class="scr-title" style="font-size: 18px">
+                    Pinjaman Saya
+                  </div>
+                  <div
+                    class="icon-tile"
+                    style="
+                      width: 34px;
+                      height: 34px;
+                      background: var(--g100);
+                      color: var(--navy);
+                      cursor: pointer;
+                    "
+                    onclick="go('notif')"
+                  >
+                    <svg class="ic" style="width: 18px; height: 18px">
+                      <use href="#ic-bell" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="balance-card">
+                  <div style="font-size: 11.5px; color: #9fb0ce">
+                    Total outstanding
+                  </div>
+                  <div
+                    style="
+                      font-size: 24px;
+                      font-weight: 800;
+                      color: #fff;
+                      margin: 3px 0 12px;
+                      position: relative;
+                    "
+                    id="dashOutstanding"
+                  >
+                    Rp0
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      position: relative;
+                    "
+                  >
+                    <div>
+                      <div style="font-size: 10.5px; color: #9fb0ce">
+                        Sisa tenor
+                      </div>
+                      <div
+                        style="font-size: 13px; font-weight: 700; color: #fff"
+                        id="dashRemT"
+                      >
+                        0 Bulan
+                      </div>
+                    </div>
+                    <div>
+                      <div style="font-size: 10.5px; color: #9fb0ce">
+                        Cicilan/bulan
+                      </div>
+                      <div
+                        style="font-size: 13px; font-weight: 700; color: #fff"
+                        id="dashMonthly"
+                      >
+                        Rp0
+                      </div>
+                    </div>
+                  </div>
+                  <div class="progress-track">
+                    <div
+                      class="progress-fill"
+                      id="dashProgress"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                  <div
+                    style="
+                      font-size: 10.5px;
+                      color: #9fb0ce;
+                      margin-top: 6px;
+                      position: relative;
+                    "
+                    id="dashProgressLabel"
+                  >
+                    Belum ada cicilan terbayar
+                  </div>
+                </div>
+
+                <div
+                  class="card"
+                  style="margin-top: 14px; background: var(--g50)"
+                >
+                  <div class="row" style="margin-bottom: 2px">
+                    <span
+                      class="label"
+                      style="
+                        font-weight: 700;
+                        color: var(--navy);
+                        font-size: 13px;
+                      "
+                      >Pembayaran berikutnya</span
+                    ><span class="badge badge-amber">Bulan depan</span>
+                  </div>
+                  <div
+                    style="
+                      font-size: 20px;
+                      font-weight: 800;
+                      color: var(--navy);
+                      margin: 6px 0 12px;
+                    "
+                    id="dashNext"
+                  >
+                    Rp0
+                  </div>
+                  <button
+                    class="btn btn-primary"
+                    id="payBtn"
+                    onclick="payNow()"
+                  >
+                    Bayar Cicilan (Simulasi)
+                  </button>
+                </div>
+
+                <div class="card" style="background: var(--g50)">
+                  <div
+                    class="label"
+                    style="
+                      margin-bottom: 8px;
+                      font-weight: 700;
+                      color: var(--navy);
+                      font-size: 13px;
+                    "
+                  >
+                    Riwayat pembayaran
+                  </div>
+                  <div id="histList">
+                    <div
+                      style="
+                        font-size: 12px;
+                        color: var(--g400);
+                        text-align: center;
+                        padding: 10px 0;
+                      "
+                    >
+                      Belum ada riwayat pembayaran
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="screen has-nav bg-white" id="screen-notif">
+                <div class="scr-head" style="position: static">
+                  <div class="scr-title" style="font-size: 18px">
+                    Notifikasi
+                  </div>
+                </div>
+                <div class="chip-row">
+                  <div
+                    class="chip active"
+                    data-cat="all"
+                    onclick="filterNotif(this)"
+                  >
+                    Semua
+                  </div>
+                  <div
+                    class="chip"
+                    data-cat="pinjaman"
+                    onclick="filterNotif(this)"
+                  >
+                    Pinjaman
+                  </div>
+                  <div
+                    class="chip"
+                    data-cat="promo"
+                    onclick="filterNotif(this)"
+                  >
+                    Promo
+                  </div>
+                  <div class="chip" data-cat="info" onclick="filterNotif(this)">
+                    Info
+                  </div>
+                </div>
+
+                <div
+                  class="card"
+                  id="notifList"
+                  style="
+                    background: none;
+                    border: none;
+                    box-shadow: none;
+                    padding: 0;
+                  "
+                >
+                  <div class="notif-card" data-cat="info">
+                    <div
+                      class="icon-tile"
+                      style="
+                        background: var(--red-light);
+                        color: #b8362c;
+                        width: 36px;
+                        height: 36px;
+                      "
+                    >
+                      <svg class="ic" style="width: 18px; height: 18px">
+                        <use href="#ic-alert" />
+                      </svg>
+                    </div>
+                    <div style="flex: 1">
+                      <div
+                        style="
+                          font-size: 13px;
+                          font-weight: 700;
+                          color: var(--navy);
+                        "
+                      >
+                        Keamanan akun
+                      </div>
+                      <div
+                        style="
+                          font-size: 11.5px;
+                          color: var(--g500);
+                          margin-top: 1px;
+                        "
+                      >
+                        Login baru terdeteksi di perangkat saat ini
+                      </div>
+                      <div
+                        style="
+                          font-size: 10px;
+                          color: var(--g400);
+                          margin-top: 3px;
+                        "
+                      >
+                        Kemarin · 08:30
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="empty-state" id="notifEmpty" style="display: none">
+                  <div class="icon-tile">
+                    <svg class="ic" style="width: 26px; height: 26px">
+                      <use href="#ic-gift" />
+                    </svg>
+                  </div>
+                  <div
+                    style="
+                      font-size: 13.5px;
+                      font-weight: 700;
+                      color: var(--navy);
+                    "
+                  >
+                    Belum ada notifikasi di kategori ini
+                  </div>
+                  <div
+                    style="font-size: 12px; color: var(--g500); margin-top: 4px"
+                  >
+                    Silakan cek kembali nanti
+                  </div>
+                </div>
+              </section>
+
+              <section class="screen has-nav bg-white" id="screen-profile">
+                <div class="scr-head" style="position: static">
+                  <div class="scr-title" style="font-size: 18px">Akun Saya</div>
+                </div>
+
+                <div
+                  class="card"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    background: var(--g50);
+                  "
+                >
+                  <div class="avatar-lg">AR</div>
+                  <div>
+                    <div
+                      style="
+                        font-size: 15px;
+                        font-weight: 800;
+                        color: var(--navy);
+                      "
+                    >
+                      Andi Rahman
+                    </div>
+                    <span class="badge badge-orange" style="margin-top: 4px"
+                      >Premium</span
+                    >
+                  </div>
+                </div>
+
+                <div class="card" style="background: var(--g50)">
+                  <div class="menu-row" onclick="openFeatureModal('personal')">
+                    <div class="icon-tile">
+                      <svg class="ic" style="width: 17px; height: 17px">
+                        <use href="#ic-user" />
+                      </svg>
+                    </div>
+                    <div class="txt">
+                      <div class="t1">Informasi Pribadi</div>
+                    </div>
+                    <svg class="ic chev" style="width: 16px; height: 16px">
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </div>
+                  <div class="menu-row" onclick="openFeatureModal('rekening')">
+                    <div class="icon-tile">
+                      <svg class="ic" style="width: 17px; height: 17px">
+                        <use href="#ic-wallet" />
+                      </svg>
+                    </div>
+                    <div class="txt">
+                      <div class="t1">Rekening Bank Jago</div>
+                      <div class="t2">•••• 1234</div>
+                    </div>
+                    <svg class="ic chev" style="width: 16px; height: 16px">
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </div>
+                  <div class="menu-row">
+                    <div class="icon-tile">
+                      <svg class="ic" style="width: 17px; height: 17px">
+                        <use href="#ic-finger" />
+                      </svg>
+                    </div>
+                    <div class="txt">
+                      <div class="t1">Autentikasi Biometrik</div>
+                      <div class="t2">Face ID / sidik jari</div>
+                    </div>
+                    <div
+                      class="toggle on"
+                      onclick="
+                        event.stopPropagation();
+                        this.classList.toggle('on');
+                      "
+                    ></div>
+                  </div>
+                  <div class="menu-row" onclick="openFeatureModal('partner')">
+                    <div class="icon-tile">
+                      <svg class="ic" style="width: 17px; height: 17px">
+                        <use href="#ic-link" />
+                      </svg>
+                    </div>
+                    <div class="txt">
+                      <div class="t1">Partner Terhubung</div>
+                      <div class="t2">JelajahGo</div>
+                    </div>
+                    <svg class="ic chev" style="width: 16px; height: 16px">
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </div>
+                  <div class="menu-row" onclick="openFeatureModal('settings')">
+                    <div class="icon-tile">
+                      <svg class="ic" style="width: 17px; height: 17px">
+                        <use href="#ic-settings" />
+                      </svg>
+                    </div>
+                    <div class="txt"><div class="t1">Pengaturan</div></div>
+                    <svg class="ic chev" style="width: 16px; height: 16px">
+                      <use href="#ic-chevron-r" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div
+                  class="card"
+                  style="padding: 4px 16px; background: var(--g50)"
+                >
+                  <div
+                    class="menu-row"
+                    style="border: none"
+                    onclick="
+                      restartJourney();
+                      toast('Berhasil mereset sesi', 1200);
+                    "
+                  >
+                    <div
+                      class="icon-tile"
+                      style="background: var(--red-light); color: #b8362c"
+                    >
+                      <svg class="ic" style="width: 17px; height: 17px">
+                        <use href="#ic-logout" />
+                      </svg>
+                    </div>
+                    <div class="txt">
+                      <div class="t1" style="color: #b8362c">
+                        Keluar (Reset)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <div
+                class="overlay"
+                id="mainMenuOverlay"
+                onclick="closeMainMenu()"
+              >
+                <div class="main-menu-sheet" onclick="event.stopPropagation()">
+                  <div
+                    style="
+                      width: 40px;
+                      height: 5px;
+                      background: var(--g300);
+                      border-radius: 3px;
+                      margin: 0 auto 16px;
+                    "
+                  ></div>
+                  <h3
+                    style="
+                      margin: 0 0 20px;
+                      font-size: 16px;
+                      font-weight: 800;
+                      color: var(--navy);
+                      text-align: center;
+                      letter-spacing: -0.01em;
+                    "
+                  >
+                    Menu Utama
+                  </h3>
+                  <div class="jago-action-grid" style="margin-bottom: 0">
+                    <div
+                      class="jago-action-item"
+                      onclick="
+                        closeMainMenu();
+                        openFeatureModal('qris');
+                      "
+                    >
+                      <div
+                        class="jago-icon-box"
+                        style="
+                          background: var(--orange-light);
+                          color: var(--orange);
+                        "
+                      >
+                        <svg class="ic" style="width: 22px; height: 22px">
+                          <use href="#ic-home" />
+                        </svg>
+                      </div>
+                      <span>QRIS</span>
+                    </div>
+                    <div
+                      class="jago-action-item"
+                      onclick="
+                        closeMainMenu();
+                        openFeatureModal('kirimBayar');
+                      "
+                    >
+                      <div
+                        class="jago-icon-box"
+                        style="
+                          background: var(--emerald-light);
+                          color: var(--emerald);
+                        "
+                      >
+                        <svg class="ic" style="width: 22px; height: 22px">
+                          <use href="#ic-wallet" />
+                        </svg>
+                      </div>
+                      <span>Kirim &<br />Bayar</span>
+                    </div>
+                    <div
+                      class="jago-action-item"
+                      onclick="
+                        closeMainMenu();
+                        openFeatureModal('topup');
+                      "
+                    >
+                      <div
+                        class="jago-icon-box"
+                        style="background: var(--blue-soft); color: #4a6ee0"
+                      >
+                        <svg class="ic" style="width: 22px; height: 22px">
+                          <use href="#ic-bolt" />
+                        </svg>
+                      </div>
+                      <span>Top Up</span>
+                    </div>
+                    <div
+                      class="jago-action-item"
+                      onclick="
+                        closeMainMenu();
+                        openFeatureModal('pinjaman');
+                      "
+                    >
+                      <div
+                        class="jago-icon-box"
+                        style="
+                          background: var(--purple-light);
+                          color: var(--navy);
+                        "
+                      >
+                        <svg class="ic" style="width: 22px; height: 22px">
+                          <use href="#ic-doc" />
+                        </svg>
+                      </div>
+                      <span>Pinjaman</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature-modal-overlay"
+              id="featureModalOverlay"
+              onclick="closeFeatureModal(event)"
+            >
+              <div
+                class="feature-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="featureModalTitle"
+                onclick="event.stopPropagation()"
+              >
+                <button
+                  class="modal-close"
+                  onclick="closeFeatureModal(event)"
+                  aria-label="Tutup modal"
+                >
+                  <svg class="ic" viewBox="0 0 24 24"><use href="#ic-x" /></svg>
+                </button>
+                <div class="modal-hero" id="featureModalHero">
+                  <div class="modal-icon" id="featureModalIcon"></div>
+                  <div>
+                    <h3 id="featureModalTitle"></h3>
+                    <p id="featureModalDescription"></p>
+                  </div>
+                </div>
+                <div id="featureModalBody" class="modal-body"></div>
+              </div>
+            </div>
+
+            <nav class="bottom-nav" id="bottomNav" style="display: none">
+              <div
+                class="nav-item"
+                data-s="beranda"
+                onclick="go('beranda', { tab: true })"
+              >
+                <svg class="ic" style="width: 24px; height: 24px">
+                  <use href="#ic-home" /></svg
+                ><span>Beranda</span>
+              </div>
+              <div
+                class="nav-item"
+                data-s="dashboard"
+                onclick="go('dashboard', { tab: true })"
+              >
+                <svg class="ic" style="width: 24px; height: 24px">
+                  <use href="#ic-wallet" /></svg
+                ><span>Pinjaman</span>
+              </div>
+              <div class="jago-center" onclick="openMainMenu()">
+                <div class="jago-center-btn">AR</div>
+              </div>
+              <div
+                class="nav-item"
+                data-s="notif"
+                onclick="go('notif', { tab: true })"
+              >
+                <svg class="ic" style="width: 24px; height: 24px">
+                  <use href="#ic-bell" /></svg
+                ><span>Notifikasi</span
+                ><span class="nav-badge" id="navBadge" style="display: none"
+                  >0</span
+                >
+              </div>
+              <div
+                class="nav-item"
+                data-s="profile"
+                onclick="go('profile', { tab: true })"
+              >
+                <svg class="ic" style="width: 24px; height: 24px">
+                  <use href="#ic-user" /></svg
+                ><span>Akun</span>
+              </div>
+            </nav>
+
+            <div class="toast" id="toastBox"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="jtep.js"></script>
+  </body>
+</html>
