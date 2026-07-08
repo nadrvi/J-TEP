@@ -639,3 +639,51 @@ function toast(msg, ms, useNav){
 buildToolbar();
 updateSim();
 go('beranda', {push:false});
+
+/* Interactive helpers: touch detection + gentle tilt on pointer/touch */
+(function(){
+  try{
+    const body = document.body;
+    if(('ontouchstart' in window) || navigator.maxTouchPoints > 0) body.classList.add('is-touch');
+
+    const phone = document.querySelector('.phone');
+    if(!phone) return;
+
+    let rect = null;
+    function updateRect(){ rect = phone.getBoundingClientRect(); }
+    updateRect();
+    window.addEventListener('resize', () => { updateRect(); });
+
+    const TILT_MODES = { soft: 3, normal: 6, strong: 8 };
+    let tiltIntensity = TILT_MODES.soft; // default to halus ±3deg
+
+    // Expose a tiny API to change tilt mode in the console/UI: setTiltMode('soft'|'normal'|'strong'|number)
+    window.setTiltMode = function(mode){
+      if(typeof mode === 'string' && TILT_MODES[mode] !== undefined) tiltIntensity = TILT_MODES[mode];
+      else if(!isNaN(parseFloat(mode))) tiltIntensity = parseFloat(mode);
+      return tiltIntensity;
+    };
+
+    function onPointerMove(e){
+      const p = e.touches ? e.touches[0] : e;
+      if(!rect) updateRect();
+      const cx = rect.left + rect.width/2;
+      const cy = rect.top + rect.height/2;
+      const dx = (p.clientX - cx) / rect.width; // -0.5 .. 0.5
+      const dy = (p.clientY - cy) / rect.height;
+      const rx = (-dy * tiltIntensity).toFixed(2) + 'deg';
+      const ry = (dx * tiltIntensity).toFixed(2) + 'deg';
+      phone.style.setProperty('--rx', rx);
+      phone.style.setProperty('--ry', ry);
+    }
+
+    phone.addEventListener('pointermove', onPointerMove, {passive:true});
+    phone.addEventListener('touchmove', onPointerMove, {passive:true});
+    phone.addEventListener('pointerleave', ()=>{ phone.style.setProperty('--rx','0deg'); phone.style.setProperty('--ry','0deg'); });
+    phone.addEventListener('touchend', ()=>{ phone.style.setProperty('--rx','0deg'); phone.style.setProperty('--ry','0deg'); });
+
+    // small touch styling hook
+    phone.addEventListener('touchstart', ()=> phone.classList.add('touched'));
+    phone.addEventListener('touchend', ()=> phone.classList.remove('touched'));
+  }catch(e){ console.error('interactive helper error', e); }
+})();
