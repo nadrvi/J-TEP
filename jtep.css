@@ -440,6 +440,13 @@ svg.ic {
   fill: currentColor;
   stroke: none;
 }
+/* Logo image (external) sizing and alignment */
+.logo-jago .logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 6px;
+}
 .jago-limit-card {
   background: var(--purple-light);
   border-radius: var(--r-lg);
