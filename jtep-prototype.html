@@ -2,7 +2,7 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>J-TEP — Jago Trusted Embedded Finance Platform</title>
     <link rel="stylesheet" href="jtep.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <!-- Tailwind CSS v4 (browser/JIT build) — used only to drive the responsive
+         desktop-vs-mobile behaviour of the phone-mockup shell. All the internal
+         screen/component styling stays in jtep.css untouched. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
     <svg width="0" height="0" style="position: absolute">
@@ -145,8 +149,8 @@
       </defs>
     </svg>
 
-    <div class="app-wrap">
-      <div class="app-header">
+    <div class="app-wrap max-md:!min-h-[100dvh] max-md:!p-0 max-md:!gap-0 max-md:!items-stretch max-md:!bg-[#0b1e3d]">
+      <div class="app-header max-md:!hidden">
         <span class="kicker"
           ><svg class="ic" style="width: 13px; height: 13px">
             <use href="#ic-shield" />
@@ -160,13 +164,26 @@
         </p>
       </div>
 
-      <div class="toolbar" id="toolbar"></div>
+      <div class="toolbar max-md:!hidden" id="toolbar"></div>
 
-      <div class="stage">
-        <div class="phone">
-          <div class="phone-inner" id="phoneInner">
-            <div class="notch"></div>
-            <div class="statusbar" style="background: #fff">
+      <!-- Mobile-only mini toolbar: same "Ulangi dari awal" action, in a
+           compact bar that fits a real phone screen instead of the desktop
+           header/toolbar block above. -->
+      <div class="hidden max-md:!flex max-md:!items-center max-md:!justify-between max-md:!w-full max-md:!px-4 max-md:!py-2 max-md:!fixed max-md:!top-0 max-md:!left-0 max-md:!right-0 max-md:!z-[200] max-md:![padding-top:calc(0.5rem+env(safe-area-inset-top))] max-md:!bg-[#0b1e3d]/90 max-md:![backdrop-filter:blur(6px)]">
+        <span class="max-md:!text-white max-md:!text-[11px] max-md:!font-bold max-md:!tracking-wide max-md:!uppercase max-md:!opacity-80">J-TEP Demo</span>
+        <button
+          onclick="restartJourney()"
+          class="max-md:!text-white max-md:!text-[11px] max-md:!font-bold max-md:!bg-white/10 max-md:!border max-md:!border-white/20 max-md:!rounded-full max-md:!px-3 max-md:!py-1.5 max-md:!active:scale-95"
+        >
+          ↺ Ulangi
+        </button>
+      </div>
+
+      <div class="stage max-md:!p-0 max-md:!w-full max-md:!flex-1">
+        <div class="phone max-md:![width:100dvw] max-md:![height:100dvh] max-md:!max-w-none max-md:!rounded-none max-md:!p-0 max-md:![transform:none] max-md:!mb-0 max-md:!shadow-none">
+          <div class="phone-inner max-md:!rounded-none" id="phoneInner">
+            <div class="notch max-md:!hidden"></div>
+            <div class="statusbar max-md:![padding-top:calc(env(safe-area-inset-top)+40px)]" style="background: #fff">
               <span>9:41</span>
               <div class="icons">
                 <svg

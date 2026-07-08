@@ -1,4 +1,4 @@
-  :root {
+:root {
     --orange: #ff7a1a;
     --orange-dark: #e85d00;
     --orange-light: #fff1e4;
@@ -2133,11 +2133,50 @@
     margin: 8px 0 16px;
   }
 
-  @media (max-width: 420px) {
-    .phone {
+  /* =====================================================================
+     RESPONSIVE — DESKTOP vs MOBILE (Tailwind v4 handles the shell below
+     767px via the `max-md:!` utilities inline in jtep.html; this block
+     only contains what plain CSS still needs to do: internal recalculation
+     of the phone's inner regions once it becomes a real fullscreen frame
+     on a phone, plus a safety-net fallback if Tailwind's CDN fails to load).
+     Desktop (>=768px) is completely untouched — same 375x812 mockup,
+     scaled 0.8, exactly like the original file.
+  ===================================================================== */
+  @media (max-width: 767px) {
+    /* Fallback in case the Tailwind CDN script is blocked/offline:
+       still gives a usable fullscreen phone frame on real mobile devices. */
+    .app-wrap {
+      padding: 0;
+      gap: 0;
+      min-height: 100dvh;
+    }
+    .app-header,
+    .toolbar {
+      display: none;
+    }
+    .stage {
+      padding: 0;
       width: 100%;
-      max-width: 375px;
-      transform: scale(1);
+    }
+    .phone {
+      width: 100dvw;
+      height: 100dvh;
+      max-width: none;
+      border-radius: 0;
+      padding: 0;
+      transform: none;
       margin-bottom: 0;
+      box-shadow: none;
+    }
+    .phone-inner {
+      border-radius: 0;
+    }
+    .notch {
+      display: none;
+    }
+    .statusbar {
+      padding-top: calc(env(safe-area-inset-top) + 40px);
     }
   }
+
+  /* (old max-width:420px rule superseded by the max-width:767px block above) */
